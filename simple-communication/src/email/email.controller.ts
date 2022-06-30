@@ -19,7 +19,7 @@ export class EmailController {
   create(@Body() data: SendMailDto) {
     const { subject, recipientEmail, message } = data;
     return this.emailService.sendMail(
-      'michaelozor15@gmail.com',
+      'charlesmir04@gmail.com',
       recipientEmail,
       subject,
       message
