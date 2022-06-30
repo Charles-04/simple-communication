@@ -5,15 +5,6 @@ import { SendMailDto } from './dto/send-mail.dto';
 @Controller('email')
 export class EmailController {
     constructor(private readonly emailService: EmailService) {}
-    @Get()
-  findAll(): Promise<void> {
-   return this.emailService.sendMail(
-    'michaelozor15@gmail.com',
-    'jamder534@gmail.com',
-    'Test mail',
-    'Welcome to Peacegroup mailservic'
-    )
-  }
 
   @Post()
   create(@Body() data: SendMailDto) {

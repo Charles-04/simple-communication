@@ -9,6 +9,8 @@ import { EmailService } from './email/email.service';
 import { SmsController } from './sms/sms.controller';
 import { SmsService } from './sms/sms.service';
 import { SmsModule } from './sms/sms.module';
+import { config } from 'dotenv';
+config()
 
 @Module({
   imports: [
@@ -19,15 +21,15 @@ import { SmsModule } from './sms/sms.module';
         port: 465,
         secure: true,
         auth: {
-            user: 'michaelozor15@gmail.com',
-            pass: 'gtmbzjlnsvxgngij'
+            user: 'charlesmir04@gmail.com',
+            pass: 'tdkzckhpphffobhr'
         }
       }
   }),
   SmsModule,
   TwilioModule.forRoot({
-    accountSid: 'ACaba846d03bfbc92c73a3dd367c7d4356',
-    authToken: 'b793a4bc96004a93655f920d1e694073',
+    accountSid: process.env.TWILIO_ACCOUNT_SID,
+    authToken: process.env.TWILIO_AUTH_TOKEN,
 })
 ],
   

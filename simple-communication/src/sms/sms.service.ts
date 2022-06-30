@@ -1,5 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectTwilio, TwilioClient } from 'nestjs-twilio';
+import { config } from 'dotenv';
+config()
+
 @Injectable()
 export class SmsService {
   public constructor(@InjectTwilio() private readonly client: TwilioClient) {}
@@ -8,7 +11,7 @@ export class SmsService {
     try {
       return await this.client.messages.create({
         body,
-        from:"+18645315499",
+        from: process.env.TWILIO_PHONE_NUMBER,
         to,
       });
     } catch (e) {
