@@ -1,4 +1,4 @@
 export class SendSmsDto {
-    body:string;
-    to:string;
+  body: string;
+  to: string;
 }

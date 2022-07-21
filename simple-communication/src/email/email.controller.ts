@@ -1,10 +1,10 @@
-import { Get,Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body } from '@nestjs/common';
 import { EmailService } from './email.service';
 import { SendMailDto } from './dto/send-mail.dto';
 
 @Controller('email')
 export class EmailController {
-    constructor(private readonly emailService: EmailService) {}
+  constructor(private readonly emailService: EmailService) {}
 
   @Post()
   create(@Body() data: SendMailDto) {
@@ -13,8 +13,7 @@ export class EmailController {
       'charlesmir04@gmail.com',
       recipientEmail,
       subject,
-      message
+      message,
     );
   }
-
 }
